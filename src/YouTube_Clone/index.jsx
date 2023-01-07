@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container,Wrapper } from './style';
+import { Category,Container,Wrapper } from './style';
 import Body from './Body';
 import SideBar from './SideBar'
 
@@ -8,7 +8,13 @@ export default class Youtube extends Component {
   render() {
     return (
       <Container>
-        <Wrapper >Wrapper</Wrapper>
+        <Wrapper >
+        <Category>Birinchisi</Category>
+        <Category>Ikkinchisi</Category>
+        <Category>Uchinchisi</Category>
+
+
+        </Wrapper>
       <Container flex>
 
         <SideBar/>

@@ -1,54 +1,82 @@
-import styled, { css } from 'styled-components';
+import styled, { css ,keyframes} from 'styled-components';
 
-let getSize=(props)=>{
-   switch(props.type){
-      case 'large':
-        return '200px'
-        case 'medium':
-            return '150px'
-            case 'small':
-                return '100px'
-                default:
-                    return '200px'
-   }
+
+
+
+let rotate=  keyframes`
+from{
+
+   transform:rotate(0deg) 
+
+}
+to{
+
+    transform:rotate(360deg) 
 
 }
 
-let common =css`
-background-color:red;
 
 
+`
 
-`;
+let common=css`
+background:coral;
+width: 300px;
+height: 60px;
 
-export let Container=styled.div`
-width: 100%;
-height: 100vh;
-background-color:blue;
+:active{
+    transform:scale(0.95)
+}
+
 display: flex;
 
-
-`;
-export let Title=styled.h1`
-background-color:${(props)=>props.bg};
- color:coral;
+align-items:center;
+justify-content:center;
+cursor: pointer;
+color:white;
+ border:1px solid white;
+ margin: 20px;
+ border-radius:7px;
  font-size:25px;
- font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+`
+
+
+
+export let Container=styled.div`
+
 margin: 20px;
-`;
+`
 
-export let Box=styled.div`
+
+export let Button=styled.button`
 ${common}
+`;
 
- width:${getSize};
- height: ${getSize};
- 
- margin: 100px;
 
+export let ActiveButton=styled(Button)`
+background-color:blue;
 
 `;
-export let Des =styled.h1`
- color:${({left})=>(left? 'red':'green')}
+export let Press=styled.div`
+
+${common};
+background:violet;
+transform:scale(1)
 
 
-`;
+`
+export let Rotate=styled.div`
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  animation:${rotate} 2s linear infinite; 
+  border-radius:50%;
+  border:1px solid coral;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+
+`

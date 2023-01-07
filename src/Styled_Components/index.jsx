@@ -1,38 +1,55 @@
 import React from "react";
 import {
-Container,
-Title,
-Box,
-Des,
+
+Button,
+ActiveButton,
+Press,
+Rotate,
 
 
 
 
 } from './StyledComp'
+import{ThemeProvider,createGlobalStyle} from 'styled-components'
+
+
+const Globalstyle=createGlobalStyle`
+body{
+    background:${(props)=>props.theme.bg};
+color:${(props)=>props.theme.cl};
+}
 
 
 
+`;
 
 
 
 class StyledComp extends React.Component{
-
+    state={
+        light:true,
+    }
 
 
 render(){
-
-
+  
+ let theme={
+    bg:this.state.light?'white':'black',
+    cl:this.state.light?'black':'white',
+ }
 
     return(
 
-        <Container>
-            <Title bg='yellow'>Hi Dear</Title>
-            <Box  type='large'>Large</Box>
-            <Box type='medium'>Medium</Box>
-            <Box  type='small'>Small</Box>
-            <Des left>This is Description</Des>
-            <Des >This is Description</Des>
-        </Container>
+        <ThemeProvider theme={theme}>
+            <Globalstyle/>
+            <h1>Theme Provider</h1>
+          <Button>Click me</Button>
+          <ActiveButton>Activate me</ActiveButton>
+          <Press>Press me</Press>
+          <Rotate>Rotate Me</Rotate>
+          <Button onClick={()=>this.setState({light:!this.state.light})}>Change Theme</Button>
+
+        </ThemeProvider>
 
     );
 }

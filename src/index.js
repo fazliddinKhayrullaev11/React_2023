@@ -5,13 +5,13 @@ import './index.css';
 // import StyledComp from './Styled_Components/index.jsx'
 // import Youtube from './YouTube_Clone/index.jsx';
 // import Youtube from './YouTube_Clone/index.jsx';
-import Lesson8 from './lesson-8/index.jsx';
+import Lesson9 from './lesson-9/index.jsx';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Lesson8/>
+    <Lesson9/>
   </React.StrictMode>
 );
 
